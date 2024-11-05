@@ -2,6 +2,7 @@ package com.sabbir.memorybench;
 
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
@@ -61,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
         setupSpinners();
         speedTester = new StorageSpeedTester(this);
         checkPermissions();
+
+        getWindow().getAttributes().layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+
     }
 
     private void initViews() {
